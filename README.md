@@ -21,5 +21,5 @@ alternativas sostenibles.
 - Seguridad y cumplimiento (Protección de datos)
 - 
 ## Infografia sobre el proyecto
-![](ROPA .png)
+![](https://github.com/puj-course/fis_2025_g5/blob/786692b24da2ee1617bae19a0291ce3abe01e25b/ROPA%20.png)
 
