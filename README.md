@@ -21,4 +21,5 @@ alternativas sostenibles.
 - Seguridad y cumplimiento (Protección de datos)
 - 
 ## Infografia sobre el proyecto
-![Demo](url_de_una_imagen)
+[(https://github.com/puj-course/fis_2025_g5/pull/78/files)
+]
