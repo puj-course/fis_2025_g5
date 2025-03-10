@@ -37,3 +37,30 @@ CREATE TABLE VideosProduccion (
     descripcion TEXT,
     FOREIGN KEY (id_material) REFERENCES MaterialesTextiles(id_material) ON DELETE CASCADE
 );
+-- Tabla de Relación entre Proveedores y Materiales
+CREATE TABLE ProveedoresMateriales (
+    id_proveedor INT,
+    id_material INT,
+    FOREIGN KEY (id_proveedor) REFERENCES Proveedores(id_proveedor) ON DELETE CASCADE,
+    FOREIGN KEY (id_material) REFERENCES MaterialesTextiles(id_material) ON DELETE CASCADE,
+    PRIMARY KEY (id_proveedor, id_material)
+);
+
+-- Tabla de Consultas de los Usuarios
+CREATE TABLE ConsultasUsuarios (
+    id_consulta INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT,
+    id_material INT,
+    fecha_consulta TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario) ON DELETE CASCADE,
+    FOREIGN KEY (id_material) REFERENCES MaterialesTextiles(id_material) ON DELETE CASCADE
+);
+
+-- Tabla de Notificaciones de Errores
+CREATE TABLE NotificacionesErrores (
+    id_error INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT,
+    mensaje TEXT NOT NULL,
+    fecha_error TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario) ON DELETE SET NULL
+);
