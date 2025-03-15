@@ -1,0 +1,23 @@
+.pane{
+	/*-fx-background-image: linear-gradient(to right top, #f1e0d1, #eadecc, #e3ddc8, #dadbc5, #d1dac3);*/
+	-fx-background-color:#D1DAC3;
+}
+
+.field{
+	-fx-background-color:#f0e9e0;
+}
+
+.button{
+	-fx-background-color:transparent;
+	-fx-background-radius:5px;
+	-fx-border-color:#674f2d;
+	-fx-border-radius:5px;
+	-fx-border-width:1px;
+	-fx-text-fill:#674f2d;
+}
+
+.tf_box{
+	-fx-background-color:transparent;
+	-fx-border-color:#674f2d;
+	-fx-border-width:0px 0px 1px 0px;
+}
