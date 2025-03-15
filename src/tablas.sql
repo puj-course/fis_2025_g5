@@ -64,3 +64,4 @@ CREATE TABLE NotificacionesErrores (
     fecha_error TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario) ON DELETE SET NULL
 );
+
