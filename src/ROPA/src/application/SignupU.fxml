@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="430.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="430.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SignupUController">
    <children>
       <AnchorPane prefHeight="400.0" prefWidth="430.0" styleClass="field" stylesheets="@application.css">
          <children>
@@ -19,7 +19,7 @@
             <TextField layoutX="48.0" layoutY="110.0" prefHeight="35.0" prefWidth="320.0" promptText="Nombre" styleClass="tf_box" stylesheets="@application.css" />
             <TextField layoutX="48.0" layoutY="170.0" prefHeight="35.0" prefWidth="320.0" promptText="Correo" styleClass="tf_box" stylesheets="@application.css" />
             <TextField layoutX="48.0" layoutY="230.0" prefHeight="35.0" prefWidth="320.0" promptText="Contraseña" styleClass="tf_box" stylesheets="@application.css" />
-            <Button layoutX="302.0" layoutY="300.0" mnemonicParsing="false" text="Registrar" />
+            <Button fx:id="URegistrarButton" layoutX="302.0" layoutY="300.0" mnemonicParsing="false" onAction="#goToMain" text="Registrar" />
          </children>
       </AnchorPane>
    </children>
