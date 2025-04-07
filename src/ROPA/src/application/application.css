@@ -15,6 +15,14 @@
 	-fx-border-width:1px;
 	-fx-text-fill:#674f2d;
 }
+.buttonTab{
+	-fx-background-color:transparent;
+	-fx-background-radius:5px;
+	-fx-border-color:#674f2d;
+	/*-fx-border-radius:5px;*/
+	-fx-border-width:0px 0px 1px 0px;
+	-fx-text-fill:#674f2d;
+}
 
 .tf_box{
 	-fx-background-color:transparent;

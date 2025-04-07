@@ -1,6 +1,7 @@
-package controladores;
+package grupodefault.proyectofundamentos;
 import java.sql.Connection;
 import java.sql.DriverManager;
+
 public class DataBaseConnection {
 public Connection databaseLink;
 public Connection getConnection() {
@@ -20,4 +21,3 @@ public Connection getConnection() {
     return databaseLink;
 }
     }
-
