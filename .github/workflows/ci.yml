@@ -22,16 +22,9 @@ jobs:
       - name: Construcción del proyecto
         run: mvn clean package
 
-      - name: Ejecutar pruebas
-        run: mvn test
-
-      - name: Subir artefacto
-        uses: actions/upload-artifact@v4
-        with:
-          name: app-jar
-          path: target/*.jar
-          
       - name: Crear Release en GitHub
         uses: softprops/action-gh-release@v1
         with:
-          files: target/*.jar
+          files: target/*.jar  # O lo que quieras subir
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
