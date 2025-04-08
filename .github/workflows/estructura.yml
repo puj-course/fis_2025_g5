@@ -1,0 +1,38 @@
+name: estructura
+
+on:
+  push:
+    branches: [ "main","Feature-Develop","workflow-patch"]
+  pull_request:
+    branches: [ "main","Feature-Develop","workflow-patch"]
+
+jobs:
+  process-and-report:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout del código
+      uses: actions/checkout@v3
+
+    - name: Configurar JDK
+      uses: actions/setup-java@v3
+      with:
+        java-version: '21'
+        distribution: 'temurin'
+
+    - name: Ver estructura del proyecto
+      run: ls -R
+
+    - name: Ejecutar procesamiento de datos
+      run: |
+        echo "Procesando normativa y formularios..."
+        echo "Generando informe..."
+        mkdir -p reportes
+        echo "Informe generado el $(date)" > reportes/informe.txt
+        ls -l reportes
+
+    - name: Subir artefactos del informe
+      uses: actions/upload-artifact@v4
+      with:
+        name: informe-final
+        path: reportes/informe.txt
