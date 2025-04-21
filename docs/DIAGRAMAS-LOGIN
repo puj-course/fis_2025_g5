@@ -1,0 +1,15 @@
+La gráfica representa un diagrama de clases de una aplicación JavaFX que incluye una interfaz de inicio de sesión. La clase principal Main lanza la aplicación y se conecta con el Main Controller, que gestiona la lógica de la interfaz. Este controlador interactúa con el archivo Loggin.fxml, el cual define los componentes visuales como campos de texto para el usuario y la contraseña, una etiqueta y un botón para acceder. La estructura muestra claramente la separación entre la lógica del programa y la interfaz gráfica.
+
+![Login - Clases](https://raw.githubusercontent.com/puj-course/fis_2025_g5/Feature-docs/docs/LOGIN-CLASES.png)
+
+El diagrama muestra la arquitectura de una aplicación JavaFX dividida en tres capas principales: interfaz de usuario, controlador y base de datos. La interfaz incluye archivos FXML como `Login.fxml`, `DashboardAdmin.fxml` y `DashboardUser.fxml`, gestionados por un manejador de entrada. El controlador centraliza la lógica a través de clases como `LoginController.java` y se apoya en servicios como `AuthService.java` y `SessionManager.java`. Finalmente, la capa de base de datos se encarga de la persistencia mediante `UsuarioDAO.java` y `ConexionBD.java`, conectando con las demás capas mediante controladores.
+
+![Login - Componentes](https://raw.githubusercontent.com/puj-course/fis_2025_g5/Feature-docs/docs/LOGIN-COMPONENTES.png)
+
+Este diagrama representa la estructura organizativa del proyecto JavaFX, dividido por paquetes funcionales. La aplicación (`App`) conecta con los `Controllers`, que gestionan la lógica entre las vistas (`views`) y los modelos de datos (`models`). Las vistas incluyen interfaces como `login.fxml` y los dashboards. Los modelos definen entidades como `Usuario`, `Correo` y `Rol`, que interactúan con la base de datos a través de `UsuarioDAO.java` y `ConexionBD.java`. Además, el módulo de `seguridad` encapsula los servicios de autenticación y gestión de sesión con clases como `AuthService.java` y `SessionManager.java`.
+
+![Login - Paquetes](https://raw.githubusercontent.com/puj-course/fis_2025_g5/Feature-docs/docs/LOGIN-PAQUETES.png)
+
+Este diagrama muestra la arquitectura cliente/servidor de una aplicación desarrollada con JavaFX. En el lado del cliente se incluyen tres componentes clave: la clase principal `Main`, el controlador `Main Controller` y la interfaz gráfica `Loggin.fxml`. Estos interactúan con un servidor de base de datos externo que utiliza MySQL, lo cual permite la gestión y almacenamiento de información de manera centralizada.
+
+![Login - Despliegue](https://raw.githubusercontent.com/puj-course/fis_2025_g5/Feature-docs/docs/LOGIN-DESPLIEGUE.png)
