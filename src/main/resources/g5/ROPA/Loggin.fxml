@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
@@ -16,12 +17,18 @@
                   <Font size="35.0" />
                </font>
             </Label>
-            <TextField layoutX="250.0" layoutY="328.0" prefHeight="35.0" prefWidth="400.0" promptText="Usuario" styleClass="tf_box" stylesheets="@application.css" />
-            <TextField layoutX="250.0" layoutY="404.0" prefHeight="35.0" prefWidth="400.0" promptText="Contraseña" styleClass="tf_box" stylesheets="@application.css" />
-            <Button fx:id="LogButton" layoutX="574.0" layoutY="476.0" mnemonicParsing="false" onAction="#goToMain" text="Acceder">
+            <TextField fx:id="UserField" layoutX="250.0" layoutY="328.0" prefHeight="35.0" prefWidth="400.0" promptText="Usuario" styleClass="tf_box" stylesheets="@application.css" />
+            <PasswordField fx:id="PasswordField" layoutX="250.0" layoutY="404.0" prefHeight="35.0" prefWidth="400.0" promptText="Contraseña" styleClass="tf_box" stylesheets="@application.css" />
+            <Button fx:id="CancelButton" layoutX="574.0" layoutY="476.0" mnemonicParsing="false" onAction="#goToMain" text="Cancelar">
                <font>
                   <Font size="15.0" />
                </font></Button>
+            <Button fx:id="LogButton" layoutX="484.0" layoutY="476.0" mnemonicParsing="false" onAction="#acceder" text="Acceder">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Label fx:id="WarningText" layoutX="271.0" layoutY="450.0" prefHeight="17.0" prefWidth="358.0" textAlignment="CENTER" textFill="#c90000" />
          </children>
       </AnchorPane>
    </children>

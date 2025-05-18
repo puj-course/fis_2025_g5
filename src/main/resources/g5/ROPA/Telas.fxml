@@ -17,7 +17,7 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <ImageView fx:id="img1" fitHeight="150.0" fitWidth="200.0" layoutX="48.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="img1" fitHeight="150.0" fitWidth="190.0" layoutX="48.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@thread.png" />
                </image>
@@ -28,7 +28,7 @@
                </font>
             </Label>
             <Label fx:id="info1" layoutX="242.0" layoutY="178.0" maxHeight="120.0" prefWidth="330.0" text="Info Tela 1 Info Tela 1 Info Tela 1 Info Tela 1 Info Tela 1 Info Tela 1 Info Tela 1 Info Tela 1 Info Tela 1 " textFill="#674f2d" wrapText="true" />
-            <ImageView fx:id="img3" fitHeight="150.0" fitWidth="200.0" layoutX="48.0" layoutY="305.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="img3" fitHeight="150.0" fitWidth="190.0" layoutX="48.0" layoutY="305.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@thread.png" />
                </image>
@@ -39,7 +39,7 @@
                </font>
             </Label>
             <Label fx:id="info3" layoutX="242.0" layoutY="343.0" maxHeight="120.0" prefWidth="330.0" text="Info Tela 2 Info Tela 2 Info Tela 2 Info Tela 2 Info Tela 2 Info Tela 2 Info Tela 2 Info Tela 2 Info Tela 2 Info Tela 2 " textFill="#674f2d" wrapText="true" />
-            <ImageView fx:id="img5" fitHeight="150.0" fitWidth="200.0" layoutX="48.0" layoutY="477.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="img5" fitHeight="150.0" fitWidth="190.0" layoutX="48.0" layoutY="477.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@thread.png" />
                </image>
@@ -50,7 +50,7 @@
                </font>
             </Label>
             <Label fx:id="info5" layoutX="242.0" layoutY="515.0" maxHeight="120.0" prefWidth="330.0" text="Info Tela 3 Info Tela 3 Info Tela 3 Info Tela 3 Info Tela 3 Info Tela 3 Info Tela 3 " textFill="#674f2d" wrapText="true" />
-            <ImageView fx:id="img2" fitHeight="150.0" fitWidth="200.0" layoutX="645.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="img2" fitHeight="150.0" fitWidth="190.0" layoutX="645.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@thread.png" />
                </image>
@@ -61,7 +61,7 @@
                </font>
             </Label>
             <Label fx:id="info2" layoutX="839.0" layoutY="178.0" maxHeight="120.0" prefWidth="330.0" text="Info Tela 1 Info Tela 1 Info Tela 1 Info Tela 1 Info Tela 1 Info Tela 1 Info Tela 1 Info Tela 1 Info Tela 1 " textFill="#674f2d" wrapText="true" />
-            <ImageView fx:id="img4" fitHeight="150.0" fitWidth="200.0" layoutX="645.0" layoutY="305.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="img4" fitHeight="150.0" fitWidth="190.0" layoutX="645.0" layoutY="305.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@thread.png" />
                </image>
@@ -72,7 +72,7 @@
                </font>
             </Label>
             <Label fx:id="info4" layoutX="839.0" layoutY="343.0" maxHeight="120.0" prefWidth="330.0" text="Info Tela 2 Info Tela 2 Info Tela 2 Info Tela 2 Info Tela 2 Info Tela 2 Info Tela 2 Info Tela 2 Info Tela 2 Info Tela 2 " textFill="#674f2d" wrapText="true" />
-            <ImageView fx:id="img6" fitHeight="150.0" fitWidth="200.0" layoutX="645.0" layoutY="477.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="img6" fitHeight="150.0" fitWidth="190.0" layoutX="645.0" layoutY="477.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@thread.png" />
                </image>
