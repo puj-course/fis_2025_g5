@@ -1,6 +1,6 @@
 Diagrama MVC del Proyecto
 
-![Diagrama MVC](docs/ModeloMVC.png)
+![Vista previa del Diagrama MVC](ModeloMVC.png)
 
 ## Descripción del Diagrama MVC
 
