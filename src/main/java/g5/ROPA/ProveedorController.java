@@ -65,27 +65,32 @@ public class ProveedorController {
 	@FXML
     private ImageView img6;
 	
-	public void initialize () throws SQLException {
+	public void initialize () {
 		obtenerProveedores();
 		llenarProveedores();
 	}
 	
-	public void obtenerProveedores() throws SQLException {
+	public void obtenerProveedores() {
 		
 		String consultarProveedores = "SELECT nombre, descripcion, pagina, imagen, correo FROM proveedores";
         Connection conexion = DBConnection.getConnection();
-        PreparedStatement ps = conexion.prepareStatement(consultarProveedores);
-        ResultSet rs = ps.executeQuery();
-        while(rs.next()){										//iterator
-        	Proveedor proveedorIn = new Proveedor.Builder()		//builder
-        									.nombre(rs.getString("nombre"))
-        									.descripcion(rs.getString("descripcion"))
-        									.pagina(rs.getString("pagina"))
-        									.imagen(rs.getString("imagen"))
-        									.correo(rs.getString("correo"))
-        									.build();
-            lProveedor.add(proveedorIn);
-        }
+        PreparedStatement ps;
+        try {
+			ps = conexion.prepareStatement(consultarProveedores);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()){										//iterator
+				Proveedor proveedorIn = new Proveedor.Builder()		//builder
+						.nombre(rs.getString("nombre"))
+						.descripcion(rs.getString("descripcion"))
+						.pagina(rs.getString("pagina"))
+						.imagen(rs.getString("imagen"))
+						.correo(rs.getString("correo"))
+						.build();
+				lProveedor.add(proveedorIn);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
         
         for(Proveedor t : lProveedor) {							//iterator para debugging
         	System.out.println(t.toString());
@@ -175,4 +180,13 @@ public class ProveedorController {
         	img6.setImage(null);
         }
 	}
+
+	public List<Proveedor> getlProveedor() {
+		return lProveedor;
+	}
+
+	public void setlProveedor(List<Proveedor> lProveedor) {
+		this.lProveedor = lProveedor;
+	}
+	
 }

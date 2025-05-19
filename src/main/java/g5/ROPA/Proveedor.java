@@ -124,4 +124,3 @@ public class Proveedor {
 				+ imagen + ", correo=" + correo + "]";
 	}
 }*/
-

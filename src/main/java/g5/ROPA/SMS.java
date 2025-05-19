@@ -27,11 +27,14 @@ public class SMS {
         return instance;
     }
 
-    public void enviarSMS(String mensaje) {
+    public boolean enviarSMS(String mensaje) {
         Message message = Message.creator(
                 new PhoneNumber("+573028464712"),
                 new PhoneNumber("+14845724592"),
                 mensaje
         ).create();
+        if (message.getSid() != null)
+        	return true;
+        else return false;
     }
 }

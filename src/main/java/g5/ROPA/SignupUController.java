@@ -43,18 +43,23 @@ public class SignupUController {
 		stage.show();
 	}
 	
-	public void Registrar(ActionEvent event) throws IOException, SQLException{
+	public void Registrar(ActionEvent event) throws IOException{
 		if(UserField.getText().isBlank() || MailField.getText().isBlank() || PasswordField.getText().isBlank()) {
 			WarningText.setText("llene todas las casillas");
 		} else {
 			String registrarUsuario = "INSERT INTO usuario (username, password, type, correo) values(?,?,?,?)";
 	        Connection conexion = DBConnection.getConnection();
-	        PreparedStatement ps = conexion.prepareStatement(registrarUsuario);
-	        ps.setString(1, UserField.getText());
-	        ps.setString(2, PasswordField.getText());
-	        ps.setString(3, "U");
-	        ps.setString(4, MailField.getText());
-	        ps.executeUpdate();
+	        PreparedStatement ps;
+	        try {
+				ps = conexion.prepareStatement(registrarUsuario);
+				ps.setString(1, UserField.getText());
+				ps.setString(2, PasswordField.getText());
+				ps.setString(3, "U");
+				ps.setString(4, MailField.getText());
+				ps.executeUpdate();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 	        SMS sms = SMS.getInstance();																		//singleton
 	        sms.enviarSMS("se ha registrado un nuevo Usuario: " + UserField.getText());
 	        goToMain(event);

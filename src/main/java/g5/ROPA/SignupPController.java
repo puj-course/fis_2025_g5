@@ -49,26 +49,35 @@ public class SignupPController {
 		stage.show();
 	}
 	
-	public void Registrar(ActionEvent event) throws IOException, SQLException{
+	public void Registrar(ActionEvent event) throws IOException{
 		if(UserField.getText().isBlank() || InfoField.getText().isBlank() || URLPageField.getText().isBlank() || URLImageField.getText().isBlank() || MailField.getText().isBlank() || PasswordField.getText().isBlank()) {
 			WarningText.setText("llene todas las casillas");
 		} else {
 			String registrarUProveedor = "INSERT INTO usuario (username, password, type, correo) values(?,?,?,?)";
 	        Connection conexion = DBConnection.getConnection();
-	        PreparedStatement ps = conexion.prepareStatement(registrarUProveedor);
-	        ps.setString(1, UserField.getText());
-	        ps.setString(2, PasswordField.getText());
-	        ps.setString(3, "P");
-	        ps.setString(4, MailField.getText());
-	        ps.executeUpdate();
+	        PreparedStatement ps;
+	        try {
+				ps = conexion.prepareStatement(registrarUProveedor);
+				ps.setString(1, UserField.getText());
+				ps.setString(2, PasswordField.getText());
+				ps.setString(3, "P");
+				ps.setString(4, MailField.getText());
+				ps.executeUpdate();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 	        String registrarProveedor = "INSERT INTO proveedores (nombre, descripcion, pagina, imagen, correo) values(?,?,?,?,?)";
-	        ps = conexion.prepareStatement(registrarProveedor);
-	        ps.setString(1, UserField.getText());
-	        ps.setString(2, InfoField.getText());
-	        ps.setString(3, URLPageField.getText());
-	        ps.setString(4, URLImageField.getText());
-	        ps.setString(5, MailField.getText());
-	        ps.executeUpdate();
+	        try {
+				ps = conexion.prepareStatement(registrarProveedor);
+				ps.setString(1, UserField.getText());
+				ps.setString(2, InfoField.getText());
+				ps.setString(3, URLPageField.getText());
+				ps.setString(4, URLImageField.getText());
+				ps.setString(5, MailField.getText());
+				ps.executeUpdate();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 	        SMS sms = SMS.getInstance();																		//singleton
 	        sms.enviarSMS("se ha registrado un nuevo proveedor: " + UserField.getText());
 	        goToMain(event);

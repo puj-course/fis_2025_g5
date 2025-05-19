@@ -19,6 +19,7 @@ import javafx.scene.image.ImageView;
 
 public class EmprendimientosController {
 	private List<Emprendimiento> lEmprendimiento = new ArrayList<>();
+
 	int pag=0;
 	
 	Utilityes util = new Utilityes();
@@ -65,29 +66,34 @@ public class EmprendimientosController {
 	@FXML
     private ImageView img6;
 	
-	public void initialize () throws SQLException {
+	public void initialize () {
 		obtenerEmprendimientos();
 		llenarEmprendimientos();
 	}
 	
-	public void obtenerEmprendimientos() throws SQLException {
+	public void obtenerEmprendimientos() {
 		
 		String consultarEmprendimientos = "SELECT nombre, descripcion, pagina, imagen, correo FROM emprendimientos";
         Connection conexion = DBConnection.getConnection();
-        PreparedStatement ps = conexion.prepareStatement(consultarEmprendimientos);
-        ResultSet rs = ps.executeQuery();
-        while(rs.next()){													//iterator
-            Emprendimiento emprendimientoIn = new Emprendimiento.Builder()		//builder
-            										.nombre(rs.getString("nombre"))
-            										.descripcion(rs.getString("descripcion"))
-            										.pagina(rs.getString("pagina"))
-            										.imagen(rs.getString("imagen"))
-            										.correo(rs.getString("correo"))
-            										.build();
-            lEmprendimiento.add(emprendimientoIn);
-        }
+        PreparedStatement ps;
+		try {
+			ps = conexion.prepareStatement(consultarEmprendimientos);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()){																								//iterator
+				Emprendimiento emprendimientoIn = new Emprendimiento.Builder()												//builder
+						.nombre(rs.getString("nombre"))
+						.descripcion(rs.getString("descripcion"))
+						.pagina(rs.getString("pagina"))
+						.imagen(rs.getString("imagen"))
+						.correo(rs.getString("correo"))
+						.build();
+				lEmprendimiento.add(emprendimientoIn);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
         
-        for(Emprendimiento t : lEmprendimiento) {							//iterator para debugging
+        for(Emprendimiento t : lEmprendimiento) {																		//iterator para debugging
         	System.out.println(t.toString());
         }
 	}
@@ -174,5 +180,14 @@ public class EmprendimientosController {
         	info6.setText("");
         	img6.setImage(null);
         }
+	}
+	
+	
+	public List<Emprendimiento> getlEmprendimiento() {
+		return lEmprendimiento;
+	}
+	
+	public void setlEmprendimiento(List<Emprendimiento> lEmprendimiento) {
+		this.lEmprendimiento = lEmprendimiento;
 	}
 }

@@ -82,27 +82,36 @@ public class EditarController {
 		stage.show();
 	}
 	
-	public void editarInfo(ActionEvent event) throws IOException, SQLException {
+	public void editarInfo(ActionEvent event) throws IOException {
 		User usuario = User.getInstance();
 		if(UserField.getText().isBlank() || InfoField.getText().isBlank() || URLPageField.getText().isBlank() || URLImageField.getText().isBlank()) {
 			WarningText.setText("llene todas las casillas");
 		} else {
 			String editarU = "UPDATE usuario SET username = ? WHERE username = ?";
 	        Connection conexion = DBConnection.getConnection();
-	        PreparedStatement ps = conexion.prepareStatement(editarU);
-	        ps.setString(1, UserField.getText());
-	        ps.setString(2, usuario.getNombre());
-	        ps.executeUpdate();
+	        PreparedStatement ps;
+			try {
+				ps = conexion.prepareStatement(editarU);
+				ps.setString(1, UserField.getText());
+				ps.setString(2, usuario.getNombre());
+				ps.executeUpdate();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 	        if(usuario.getTipo().equals("P")) {
 	        	String editarP = "UPDATE proveedores SET nombre = ?, descripcion = ?, pagina = ?, imagen = ? WHERE (nombre = ? AND correo = ?)";
-	        	ps = conexion.prepareStatement(editarP);
-	        	ps.setString(1, UserField.getText());
-	        	ps.setString(2, InfoField.getText());
-	        	ps.setString(3, URLPageField.getText());
-	        	ps.setString(4, URLImageField.getText());
-	        	ps.setString(5, usuario.getNombre());
-	        	ps.setString(6, usuario.getCorreo());
-	        	ps.executeUpdate();
+	        	try {
+					ps = conexion.prepareStatement(editarP);
+					ps.setString(1, UserField.getText());
+					ps.setString(2, InfoField.getText());
+					ps.setString(3, URLPageField.getText());
+					ps.setString(4, URLImageField.getText());
+					ps.setString(5, usuario.getNombre());
+					ps.setString(6, usuario.getCorreo());
+					ps.executeUpdate();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
 	        	usuario.setNombre(UserField.getText());
 	        	SMS sms = SMS.getInstance();																		//singleton
 	        	sms.enviarSMS("se ha editado un proveedor: " + UserField.getText());
@@ -110,14 +119,18 @@ public class EditarController {
 	        }
 	        else if(usuario.getTipo().equals("E")) {
 	        	String editare = "UPDATE emprendimientos SET nombre = ?, descripcion = ?, pagina = ?, imagen = ? WHERE (nombre = ? AND correo = ?)";
-	        	ps = conexion.prepareStatement(editare);
-	        	ps.setString(1, UserField.getText());
-	        	ps.setString(2, InfoField.getText());
-	        	ps.setString(3, URLPageField.getText());
-	        	ps.setString(4, URLImageField.getText());
-	        	ps.setString(5, usuario.getNombre());
-	        	ps.setString(6, usuario.getCorreo());
-	        	ps.executeUpdate();
+	        	try {
+					ps = conexion.prepareStatement(editare);
+					ps.setString(1, UserField.getText());
+					ps.setString(2, InfoField.getText());
+					ps.setString(3, URLPageField.getText());
+					ps.setString(4, URLImageField.getText());
+					ps.setString(5, usuario.getNombre());
+					ps.setString(6, usuario.getCorreo());
+					ps.executeUpdate();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
 	        	usuario.setNombre(UserField.getText());
 	        	SMS sms = SMS.getInstance();																		//singleton
 	        	sms.enviarSMS("se ha editado un emprendimiento: " + UserField.getText());

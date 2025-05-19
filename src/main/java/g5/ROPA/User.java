@@ -1,21 +1,17 @@
 package g5.ROPA;
 
-// Clase User que implementa el patrón Singleton para asegurar que solo exista una única instancia.
-// Representa un usuario con atributos básicos como nombre, tipo y correo.
 public class User {
 
 	private String nombre = null;
 	private String tipo = "N";
 	private String correo = "N";
 
-    // Instancia única de la clase (Singleton)
-    private static User instance;
+    private static User instance;						//singleton
 
-    // Constructor privado para evitar la creación de instancias externas
+    // Constructor privado para evitar instanciación externa
     private User() {}
 
-    // Método público para obtener la instancia única de la clase.
-    // Utiliza doble verificación con synchronized para ser seguro en entornos multihilo.
+    // Método de acceso público (hilo seguro con synchronized opcional)
     public static User getInstance() {
         if (instance == null) {
             synchronized (User.class) {
@@ -27,7 +23,7 @@ public class User {
         return instance;
     }
 
-    // Métodos getter y setter para acceder y modificar los atributos de la clase
+    // Getters y Setters
     public String getNombre() {
         return nombre;
     }
@@ -52,3 +48,4 @@ public class User {
         this.correo = correo;
     }
 }
+

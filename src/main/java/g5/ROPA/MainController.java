@@ -39,7 +39,7 @@ public class MainController {
 		stage.show();
 	}
 	
-	public void initialize () throws SQLException {
+	public void initialize () {
 		try {
 			fxml = FXMLLoader.load(getClass().getResource("Telas.fxml"));
 			field.getChildren().removeAll();
@@ -50,7 +50,7 @@ public class MainController {
 		}
 	}
 	
-	public void goToTelas(ActionEvent event) throws IOException, SQLException {
+	public void goToTelas(ActionEvent event) throws IOException {
 		try {
 			fxml = FXMLLoader.load(getClass().getResource("Telas.fxml"));
 			field.getChildren().removeAll();
@@ -80,16 +80,19 @@ public class MainController {
 		}	
 	}
 	
-	public void hayUsuario() {
+	public boolean hayUsuario() {
 		User usuario = User.getInstance();
 		if(usuario.getNombre() == null) {
 			editarButton.setVisible(false);
+			return false;
 		} 
 		if((usuario.getTipo().equals("P") || usuario.getTipo().equals("E"))) {
 			editarButton.setVisible(true);
 			displayUsuaria.setText(usuario.getNombre());
+			return true;
 		} else {
 			displayUsuaria.setText(usuario.getNombre());
+			return true;
 		}
 	}
 	
@@ -100,4 +103,13 @@ public class MainController {
 		stage.setScene(scene);
 		stage.show();
 	}
+
+	public Label getDisplayUsuaria() {
+		return displayUsuaria;
+	}
+
+	public void setDisplayUsuaria(Label displayUsuaria) {
+		this.displayUsuaria = displayUsuaria;
+	}
+	
 }

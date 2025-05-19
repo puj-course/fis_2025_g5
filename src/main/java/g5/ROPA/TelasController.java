@@ -64,26 +64,31 @@ public class TelasController {
 	@FXML
     private ImageView img6;
 	
-	public void initialize () throws SQLException {
+	public void initialize () {
 		obtenerTelas();
 		llenarTelas();
 	}
 	
-	public void obtenerTelas() throws SQLException {
+	public void obtenerTelas() {
 		
 		String consultarTelas = "SELECT nombre, descripcion, nota, imagen FROM telas";
         Connection conexion = DBConnection.getConnection();
-        PreparedStatement ps = conexion.prepareStatement(consultarTelas);
-        ResultSet rs = ps.executeQuery();
-        while(rs.next()){											//iterator para debugging
-            Tela telaIn = new Tela.Builder()						//builder
-            					.nombre(rs.getString("nombre"))
-            					.descripcion(rs.getString("descripcion"))
-            					.nota(rs.getInt("nota"))
-            					.imagen(rs.getString("imagen"))
-            					.build();
-            lTelas.add(telaIn);
-        }
+        PreparedStatement ps;
+        try {
+			ps = conexion.prepareStatement(consultarTelas);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()){											//iterator para debugging
+				Tela telaIn = new Tela.Builder()						//builder
+						.nombre(rs.getString("nombre"))
+						.descripcion(rs.getString("descripcion"))
+						.nota(rs.getInt("nota"))
+						.imagen(rs.getString("imagen"))
+						.build();
+				lTelas.add(telaIn);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
         
         for(Tela t : lTelas) {										//iterator para debugging
         	System.out.println(t.toString());
@@ -173,4 +178,14 @@ public class TelasController {
         	img6.setImage(null);
         }
 	}
+
+	public List<Tela> getlTelas() {
+		return lTelas;
+	}
+
+	public void setlTelas(List<Tela> lTelas) {
+		this.lTelas = lTelas;
+	}
+	
+	
 }
