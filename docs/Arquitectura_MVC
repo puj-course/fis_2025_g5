@@ -1,6 +1,6 @@
-# Diagrama MVC del Proyecto
+Diagrama MVC del Proyecto
 
-![Diagrama MVC](./ModeloMVC.png)
+![Diagrama MVC](docs/ModeloMVC.png)
 
 ## Descripción del Diagrama MVC
 
@@ -8,7 +8,7 @@ Este diagrama representa la arquitectura **MVC (Modelo-Vista-Controlador)** del 
 
 ---
 
-### **Vista**
+**Vista**
 
 La capa de **Vista** contiene las diferentes pantallas (interfaces gráficas) del sistema. Estas vistas se encargan de mostrar la información al usuario y de enviar las acciones que éste realice a los controladores. Entre las vistas se encuentran:
 
@@ -22,7 +22,7 @@ La capa de **Vista** contiene las diferentes pantallas (interfaces gráficas) de
 
 ---
 
-### **Controlador**
+**Controlador**
 
 La capa de **Controlador** maneja la lógica de navegación y la interacción entre la vista y el modelo. Cada controlador está asociado a una vista y a menudo también interactúa con el modelo. Por ejemplo:
 
@@ -32,7 +32,7 @@ La capa de **Controlador** maneja la lógica de navegación y la interacción en
 
 ---
 
-### **Modelo**
+**Modelo**
 
 La capa de **Modelo** gestiona los datos y la lógica de negocio. Incluye clases como:
 
@@ -44,7 +44,7 @@ La capa de **Modelo** gestiona los datos y la lógica de negocio. Incluye clases
 
 ---
 
-### Relaciones importantes
+Relaciones importantes
 
 - Los controladores hacen uso del modelo para recuperar y modificar datos.
 - `App` inicia la aplicación y carga la primera vista.
