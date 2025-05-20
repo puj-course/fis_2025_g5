@@ -2,23 +2,33 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="430.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="g5.ROPA.LogInController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="g5.ROPA.LogInController">
    <children>
-      <AnchorPane prefHeight="400.0" prefWidth="430.0" styleClass="field" stylesheets="@application.css">
+      <AnchorPane prefHeight="750.0" prefWidth="900.0" styleClass="field" stylesheets="@application.css">
          <children>
-            <Label layoutX="48.0" layoutY="40.0" text="Log In" textFill="#674f2d">
+            <Label layoutX="250.0" layoutY="239.0" text="Log In" textFill="#674f2d">
                <font>
-                  <Font size="24.0" />
+                  <Font size="35.0" />
                </font>
             </Label>
-            <TextField layoutX="48.0" layoutY="110.0" prefHeight="35.0" prefWidth="320.0" promptText="Usuario" styleClass="tf_box" stylesheets="@application.css" />
-            <TextField layoutX="48.0" layoutY="170.0" prefHeight="35.0" prefWidth="320.0" promptText="Contraseña" styleClass="tf_box" stylesheets="@application.css" />
-            <Button fx:id="LogButton" layoutX="307.0" layoutY="250.0" mnemonicParsing="false" onAction="#goToMain" text="Acceder" />
+            <TextField fx:id="UserField" layoutX="250.0" layoutY="328.0" prefHeight="35.0" prefWidth="400.0" promptText="Usuario" styleClass="tf_box" stylesheets="@application.css" />
+            <PasswordField fx:id="PasswordField" layoutX="250.0" layoutY="404.0" prefHeight="35.0" prefWidth="400.0" promptText="Contraseña" styleClass="tf_box" stylesheets="@application.css" />
+            <Button fx:id="CancelButton" layoutX="574.0" layoutY="476.0" mnemonicParsing="false" onAction="#goToMain" text="Cancelar">
+               <font>
+                  <Font size="15.0" />
+               </font></Button>
+            <Button fx:id="LogButton" layoutX="484.0" layoutY="476.0" mnemonicParsing="false" onAction="#acceder" text="Acceder">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Label fx:id="WarningText" layoutX="271.0" layoutY="450.0" prefHeight="17.0" prefWidth="358.0" textAlignment="CENTER" textFill="#c90000" />
          </children>
       </AnchorPane>
    </children>

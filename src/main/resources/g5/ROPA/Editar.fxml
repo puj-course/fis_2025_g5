@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="750.0" prefWidth="900.0" styleClass="field" stylesheets="@application.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="g5.ROPA.EditarController">
+   <children>
+      <Label fx:id="TituloLabel" layoutX="250.0" layoutY="186.0" text="Titulo" textFill="#674f2d">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <TextField fx:id="UserField" layoutX="250.0" layoutY="281.0" prefHeight="35.0" prefWidth="400.0" promptText="Nombre a mostrar" styleClass="tf_box" stylesheets="@application.css" />
+      <TextField fx:id="InfoField" layoutX="250.0" layoutY="341.0" prefHeight="35.0" prefWidth="400.0" promptText="Descripcion" styleClass="tf_box" stylesheets="@application.css" />
+      <TextField fx:id="URLPageField" layoutX="250.0" layoutY="401.0" prefHeight="35.0" prefWidth="400.0" promptText="URL Pagina" styleClass="tf_box" stylesheets="@application.css" />
+      <Button fx:id="CancelButton" layoutX="569.0" layoutY="531.0" mnemonicParsing="false" onAction="#goToMain" text="Cancelar">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <TextField fx:id="URLImageField" layoutX="250.0" layoutY="461.0" prefHeight="35.0" prefWidth="400.0" promptText="URL Imagen" styleClass="tf_box" stylesheets="@application.css" />
+      <Button fx:id="AplicarButton" layoutX="491.0" layoutY="531.0" mnemonicParsing="false" onAction="#editarInfo" text="Aplicar">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Label fx:id="WarningText" layoutX="271.0" layoutY="506.0" prefHeight="17.0" prefWidth="358.0" textAlignment="CENTER" textFill="#c90000" />
+   </children>
+</AnchorPane>
