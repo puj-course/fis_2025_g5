@@ -26,7 +26,7 @@ jobs:
           java-version: '21'
 
       - name: Construcción del proyecto
-        run: mvn clean package
+        run: mvn clean install
 
       - name: Ejecutar pruebas
         run: mvn test
