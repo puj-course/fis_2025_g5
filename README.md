@@ -92,6 +92,51 @@ Estos procesos se ejecutan en cada push a ramas clave (`main`, `develop`, `workf
 
 ---
 
+## 🧩 Arquitectura y Patrones
+
+El proyecto sigue el patrón de diseño **MVC (Modelo-Vista-Controlador)**:
+
+- **Modelo**: Representa las entidades principales (`Tela`, `Proveedor`, `EvaluaciónAmbiental`).
+- **Vista**: Puede ser una interfaz gráfica (GUI en JavaFX) o interfaz de consola (CLI).
+- **Controlador / Servicios**: Contiene la lógica de negocio: filtros, búsquedas, evaluaciones y rankings.
+
+### 🔁 Patrones aplicados
+
+- **Singleton**: para servicios compartidos (como el gestor de evaluaciones).
+- **Strategy**: para aplicar distintos métodos de evaluación ambiental.
+- **Factory Method**: para construir objetos `Tela` desde diversas fuentes (archivos CSV, JSON, etc.).
+- **Repository**: para separar la lógica de acceso a datos de la lógica de negocio.
+
+---
+
+## ✨ Funcionalidades
+
+- 🔍 Búsqueda de **proveedores**.
+- 🧵 Filtrado de **telas** por origen o impacto.
+- ♻️ Evaluación ambiental basada en:
+  - Consumo hídrico y energético
+  - Tipo de fibra (natural, sintética, reciclada)
+  - Emisión de químicos y huella ecológica
+  - Reciclabilidad o biodegradabilidad
+- 📊 Comparador de telas para decidir la opción más ecológica.
+
+---
+
+## 🚀 Ejecución del Proyecto
+
+- Descarga el ZIP del repositorio
+- Extrae el contenido
+- Haz doble click en ROPAinstall
+- La aplicación se debe abrir
+
+### Requisitos
+
+- Java 17+
+- Apache Maven
+- IDE como IntelliJ o Eclipse
+
+---
+
 📚 Documentación Adicional
 Diagramas de clases y entidad-relación
 
