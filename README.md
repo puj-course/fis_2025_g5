@@ -1,8 +1,8 @@
-# 🧵 Plataforma Web Textil Sostenible
+# Plataforma Web Textil Sostenible
 
 Repositorio oficial: [fis_2025_g5 - GitHub](https://github.com/puj-course/fis_2025_g5)
 
-## 📖 Descripción General
+## Descripción General
 
 Plataforma web que conecta emprendedores y proveedores del sector textil, ofreciendo información transparente sobre el impacto ambiental de los materiales. Tiene como objetivo educar al consumidor, promover alternativas sostenibles y apoyar emprendimientos responsables dentro de la industria de la moda.
 
@@ -29,7 +29,7 @@ Plataforma web que conecta emprendedores y proveedores del sector textil, ofreci
 
 ---
 
-## ⚙️ Arquitectura y Patrones
+##  Arquitectura y Patrones
 
 - **Arquitectura MVC**:
   - **Modelo**: `User`, `Tela`, `Proveedor`, `Emprendimiento`
@@ -118,12 +118,16 @@ Ambos pipelines se ejecutan en cada push o pull request hacia `main` y `Feature-
 4. Ejecuta la clase App.java.
 
 5. También puedes compilar el proyecto desde terminal:
+   
    javac -cp .;path\to\javafx\lib\* g5/ROPA/App.java
+   
    java -cp .;path\to\javafx\lib\* g5.ROPA.App
    
 
 ##Impacto Esperado
 
 -Educar al consumidor sobre el impacto ambiental de sus decisiones.
+
 -Apoyar emprendimientos sostenibles.
+
 -Base para un futuro marketplace de moda ética.
