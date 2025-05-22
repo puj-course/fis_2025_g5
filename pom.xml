@@ -86,11 +86,15 @@
 		            <goal>shade</goal>
 		          </goals>
 		          <configuration>
+			      	<!-- Nombre del archivo final -->
+	           		<finalName>ROPA</finalName>
 		            <transformers>
 		              <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
 		                <mainClass>g5.ROPA.Main</mainClass>
 		              </transformer>
 		            </transformers>
+		            <!-- Ruta absoluta al escritorio -->
+            		<outputFile>${user.home}/Desktop/ROPA.jar</outputFile>
 		          </configuration>
 		        </execution>
 		      </executions>
