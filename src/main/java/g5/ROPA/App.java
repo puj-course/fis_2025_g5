@@ -18,7 +18,7 @@ public class App extends Application {
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			stage.setTitle("ROPA");
 			
-			Image icon = new Image("icon.png");
+			Image icon = new Image(getClass().getResource("/g5/ROPA/icon.png").toExternalForm());
 			stage.getIcons().add(icon);
 			
 			stage.setScene(scene);
