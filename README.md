@@ -1,133 +1,169 @@
-# Plataforma Web Textil Sostenible
+# fis_2025_g5
+fis_2025_g5
 
-Repositorio oficial: [fis_2025_g5 - GitHub](https://github.com/puj-course/fis_2025_g5)
+# 👕 ROPA - Moda Consciente
 
-## Descripción General
-
-Plataforma web que conecta emprendedores y proveedores del sector textil, ofreciendo información transparente sobre el impacto ambiental de los materiales. Tiene como objetivo educar al consumidor, promover alternativas sostenibles y apoyar emprendimientos responsables dentro de la industria de la moda.
-
----
-
-##  Características principales
-
--  Información sobre el impacto ambiental de materiales textiles.
--  Conexión entre proveedores y emprendedores sostenibles.
--  Estadísticas sobre contaminación en la industria textil.
--  Clasificación ambiental de tejidos (escala 1–10).
--  Catálogo de textiles y fichas técnicas educativas.
+**Concientización sobre el impacto ambiental de la industria de la moda**
 
 ---
 
-##  Tecnologías utilizadas
+## 📖 Descripción
 
-- **Frontend**: JavaFX  
-- **Backend**: Java  
-- **Base de Datos**: MySQL  
-- **Control de versiones**: GitHub  
-- **CI/CD**: GitHub Actions (2 pipelines activos)  
-- **Infraestructura y Hosting**: Despliegue automatizado vía pipeline
+**ROPA** es una plataforma web diseñada para conectar emprendedores del sector moda con proveedores textiles, fomentando el consumo responsable y la transparencia ambiental. A través de esta herramienta, los usuarios pueden conocer el impacto ambiental de distintos tipos de tejidos, comparar alternativas más sostenibles y acceder a emprendimientos alineados con los principios de la moda ética.
+
+Este proyecto surge como una respuesta a la creciente preocupación por la contaminación de la industria textil, una de las más contaminantes del mundo, y busca empoderar a los actores del sector con información confiable, visual y educativa.
 
 ---
 
-##  Arquitectura y Patrones
+## 🚀 Características Principales
 
-- **Arquitectura MVC**:
-  - **Modelo**: `User`, `Tela`, `Proveedor`, `Emprendimiento`
-  - **Vista**: Interfaces JavaFX (`Main.fxml`, `Login.fxml`, etc.)
-  - **Controlador**: `MainController`, `LoginController`, `SignupControllers`, etc.
-- **Patrones GoF Aplicados**:
-  -  **Singleton**: `User`, `SMS`, `DBConnection`
-  -  **Builder**: construcción flexible de objetos (`Tela`, `Proveedor`, `Emprendimiento`)
-  -  **Iterator (implícito)**: uso de colecciones para alimentar las vistas
+- 🌍 Información sobre el daño ambiental de materiales como algodón, poliéster, viscosa, entre otros.
+- 🛍️ Promoción de emprendimientos sostenibles, visibilizando alternativas éticas en la moda.
+- 📊 Visualización de datos y estadísticas relevantes sobre contaminación hídrica, emisión de CO₂, uso energético, etc.
+- 🧵 Conexión entre proveedores y emprendedores, facilitando decisiones de compra más conscientes.
 
 ---
 
-##  Métricas de Calidad del Código
+## 🧠 Arquitectura y Diseño
 
-###  Complejidad Ciclomática Total: 83
+El sistema está estructurado bajo una arquitectura cliente-servidor, siguiendo el patrón Modelo Vista Controlador (MVC). Además, se adoptaron principios de desacoplamiento y responsabilidad única, facilitando la mantenibilidad del código y su escalabilidad.
 
-- Rango aceptable para un proyecto mediano.
-- Clases con mayor complejidad (≥11): `EditarController`, `EmprendimientosController`, `ProveedorController`, `TelasController`.
+### 🔷 Componentes:
 
-###  Longitud del Código
-
-- Total del proyecto: **1576 líneas de código**
-- Ninguna clase supera las 200 líneas, lo cual mejora la mantenibilidad
-
----
-
-##  Pruebas Unitarias
-
-- Implementadas con **JUnit 5**
-- Casos cubiertos:
-  - Verificación de conexión (`DBConnection`)
-  - Comportamiento de instancias únicas (`SMS`, `User`)
-  - Validación de estructuras construidas con Builder
-  - Validación de URLs (`Utilityes`)
-  - Controladores y lógica de navegación
+- **Frontend**: Interfaz desarrollada con JavaFX, priorizando la experiencia de usuario.
+- **Backend**: Lógica de negocio en Java.
+- **Base de datos**: MySQL, con tablas optimizadas para categorías de tela, proveedores y emprendimientos.
+- **Automatización CI/CD**: GitHub Actions.
 
 ---
 
-##  CI/CD con GitHub Actions
+## ⚙️ Tecnologías Utilizadas
 
-- **cd.yml**: Compila el proyecto, ejecuta pruebas y sube artefactos `.jar`
-- **estructura.yml**: Valida la estructura del repositorio y genera informe automático
-
-Ambos pipelines se ejecutan en cada push o pull request hacia `main` y `Feature-Develop`.
-
----
-
-##  Metodología y Organización
-
-- Se implementó **Scrum** durante 13 sprints
-- Planeación mediante historias de usuario y sub-issues
-- Seguimiento con:
-  - Tablero Kanban
-  - Poker Scrum para estimaciones
-  - Gráficos de burndown y milestones
+| Categoría              | Tecnología            |
+|------------------------|------------------------|
+| Lenguajes              | Java, SQL              |
+| Interfaz gráfica       | JavaFX                 |
+| Base de datos          | MySQL                  |
+| Automatización y DevOps| GitHub Actions         |
+| Control de versiones   | Git y GitHub           |
+| Metodología            | Scrum + Poker Planning |
 
 ---
 
-##  Implementación de Módulos Clave
-
--  **Módulo de SMS**: Envía notificaciones usando Twilio (Singleton)
--  **Validación de enlaces**: Método `Utilityes.urlValida()`
--  **Gestión de usuario activo**: Clase `User` mantiene la sesión
+## 🛠️ Estructura del Proyecto
+ROPA
+├── /src # Código fuente Java
+├── /tests # Pruebas unitarias
+├── /docs # Documentación del sistema
+├── /.github/workflows # Pipelines de GitHub Actions
+├── README.md
+└── pom.xml # Configuración Maven
 
 ---
 
-##  Descarga y Ejecución de la Aplicación
+## 🔁 Metodología de Desarrollo
 
-###  Requisitos previos
+El proyecto se desarrolla bajo la metodología ágil Scrum, con iteraciones semanales (sprints), usando historias de usuario, sub-issues y planificación con Poker Scrum. Se definieron milestones temáticos (base de datos, UI, backend, etc.), que permiten visualizar el progreso por módulos.
 
-- JDK 17 o superior
-- JavaFX SDK instalado y vinculado en el entorno (IDE o terminal)
-- MySQL corriendo y configurado con la base de datos `ropa.sql`
+### Herramientas de gestión:
 
-###  Instrucciones
+- Tablero Kanban: Seguimiento de issues (`Backlog`, `Ready`, `In Progress`, `Done`).
+- 7 sprints ejecutados hasta la fecha.
+- Issues organizados por prioridad, asignación y complejidad.
 
-1. Clona el repositorio:
-   ```bash
-   git clone https://github.com/puj-course/fis_2025_g5.git
-   Abre el proyecto en tu IDE (recomendado: IntelliJ IDEA o Eclipse).
+---
 
-2. Configura el SDK de Java y la librería de JavaFX.
+## ⚙️ DevOps y Automatización
 
-3. Asegúrate de que la base de datos esté creada y configurada (ver clase DBConnection para las credenciales).
+Se configuraron dos pipelines con GitHub Actions:
 
-4. Ejecuta la clase App.java.
+### 🔧 `cd.yml`
+- Compilación automática con Maven
+- Ejecución de pruebas
+- Validación de artefactos
+- Subida de resultados
 
-5. También puedes compilar el proyecto desde terminal:
-   
-   javac -cp .;path\to\javafx\lib\* g5/ROPA/App.java
-   
-   java -cp .;path\to\javafx\lib\* g5.ROPA.App
-   
+### 🧩 `estructura.yml`
+- Validación de estructura del repositorio
+- Generación de informes simulados
+- Subida de artefactos
 
-##Impacto Esperado
+Estos procesos se ejecutan en cada push a ramas clave (`main`, `develop`, `workflow-patch`), garantizando la integridad y la calidad continua del proyecto.
 
--Educar al consumidor sobre el impacto ambiental de sus decisiones.
+---
 
--Apoyar emprendimientos sostenibles.
+## 🧩 Arquitectura y Patrones
 
--Base para un futuro marketplace de moda ética.
+El proyecto sigue el patrón de diseño **MVC (Modelo-Vista-Controlador)**:
+
+- **Modelo**: Representa las entidades principales (`Tela`, `Proveedor`, `EvaluaciónAmbiental`).
+- **Vista**: Puede ser una interfaz gráfica (GUI en JavaFX) o interfaz de consola (CLI).
+- **Controlador / Servicios**: Contiene la lógica de negocio: filtros, búsquedas, evaluaciones y rankings.
+
+### 🔁 Patrones aplicados
+
+- **Singleton**: para servicios compartidos (como el gestor de evaluaciones).
+- **Strategy**: para aplicar distintos métodos de evaluación ambiental.
+- **Factory Method**: para construir objetos `Tela` desde diversas fuentes (archivos CSV, JSON, etc.).
+- **Repository**: para separar la lógica de acceso a datos de la lógica de negocio.
+
+---
+
+## ✨ Funcionalidades
+
+- 🔍 Búsqueda de **proveedores**.
+- 🧵 Filtrado de **telas** por origen o impacto.
+- ♻️ Evaluación ambiental basada en:
+  - Consumo hídrico y energético
+  - Tipo de fibra (natural, sintética, reciclada)
+  - Emisión de químicos y huella ecológica
+  - Reciclabilidad o biodegradabilidad
+- 📊 Comparador de telas para decidir la opción más ecológica.
+
+---
+
+## 🚀 Ejecución del Proyecto
+
+- Descarga el ZIP del repositorio
+- Extrae el contenido
+- Haz doble click en ROPAinstall
+- La aplicación se debe abrir
+
+### Requisitos
+
+- Java 17+
+- Apache Maven
+- IDE como IntelliJ o Eclipse
+
+---
+
+📚 Documentación Adicional
+Diagramas de clases y entidad-relación
+
+Mockups de interfaz
+
+Guía de usuario
+
+Infografía de impacto ambiental por tela (incluida en /docs)
+
+Reportes de sprints y métricas de rendimiento
+
+📈 Impacto Esperado
+ROPA busca transformar la forma en que consumimos moda, empoderando tanto a consumidores como a emprendedores con datos y herramientas para elegir responsablemente. A través de tecnología, diseño y educación ambiental, se construye un puente hacia una industria textil más ética y sostenible.
+
+📩 Contacto
+Para dudas, sugerencias o contribuciones, contacta a:
+
+Juan Felipe Gutiérrez
+
+Santiago Galindo
+
+Laura Sofía Aponte
+
+Juan Esteban Bello
+
+  
+## Infografia sobre el proyecto
+![](https://github.com/puj-course/fis_2025_g5/blob/786692b24da2ee1617bae19a0291ce3abe01e25b/ROPA%20.png)
+
+.
