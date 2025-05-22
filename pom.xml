@@ -94,7 +94,6 @@
 		              </transformer>
 		            </transformers>
 		            <!-- Ruta absoluta al escritorio -->
-            		<outputFile>${user.home}/Desktop/ROPA.jar</outputFile>
 		          </configuration>
 		        </execution>
 		      </executions>
