@@ -26,7 +26,7 @@ jobs:
           java-version: '21'
 
       - name: Construcción del proyecto
-        run: mvn clean install
+        run: mvn clean install -DskipTests
 
       - name: Ejecutar pruebas
         run: mvn test
@@ -35,4 +35,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: app-jar
-          path: target/*.jar
+          path: target/ROPA.jar
