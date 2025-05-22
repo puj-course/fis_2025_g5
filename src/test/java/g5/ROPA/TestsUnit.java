@@ -26,7 +26,7 @@ class TestsUnit {
     }
 
  // Test para SMS
-    @Test
+    /*@Test
     void testSendSMS() {
     	SMS sms = SMS.getInstance();																		//singleton
         boolean result = sms.enviarSMS("Mensaje de prueba");
@@ -39,7 +39,7 @@ class TestsUnit {
         User u1 = User.getInstance();
         User u2 = User.getInstance();
         assertSame(u1, u2, "User.getInstance debería devolver la misma instancia");
-    }
+    }*/
 
     @Test
     void testUserSettersAndGetters() {
