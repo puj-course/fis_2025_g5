@@ -14,13 +14,11 @@
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
             <version>23.0.1</version>
-            <classifier>linux</classifier>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
             <version>23.0.1</version>
-            <classifier>linux</classifier>
         </dependency>
         
         <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
